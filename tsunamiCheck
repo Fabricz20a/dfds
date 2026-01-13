@@ -1,7 +1,17 @@
 local UserInputService = game:GetService("UserInputService")
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+-- Wait until the player and input are ready
+repeat task.wait() until player and UserInputService
+
+-- Ensure properties exist
+repeat task.wait() until UserInputService.TouchEnabled ~= nil and UserInputService.KeyboardEnabled ~= nil
 
 if UserInputService.TouchEnabled and not UserInputService.KeyboardEnabled then
+    -- Mobile
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Fabricz20a/dfds/refs/heads/main/EscapetsunamiMobile.lua"))()
 else
+    -- Not mobile
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Fabricz20a/dfds/refs/heads/main/Escapetsunamipc.lua"))()
 end
