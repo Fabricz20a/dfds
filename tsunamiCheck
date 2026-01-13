@@ -1,0 +1,5 @@
+if UserInputService.TouchEnabled and not UserInputService.KeyboardEnabled then
+    print("Mobile")
+else
+    print("Not Mobile")
+end
