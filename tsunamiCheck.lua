@@ -11,10 +11,3 @@ if UserInputService.TouchEnabled and not UserInputService.KeyboardEnabled then
 else
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Fabricz20a/dfds/refs/heads/main/Escapetsunamipc.lua"))()
 end
-
-local guiFolder = game.CoreGui:WaitForChild("larp")
-local gui = guiFolder:WaitForChild("UnsupportedGameGUI")
-
--- Optional extra wait before destroying
-task.wait(1)  -- wait 1 second
-gui:Destroy()
