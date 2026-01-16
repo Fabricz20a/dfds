@@ -11,3 +11,13 @@ if UserInputService.TouchEnabled and not UserInputService.KeyboardEnabled then
 else
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Fabricz20a/dfds/refs/heads/main/Escapetsunamipc.lua"))()
 end
+
+local guiName = "UnsupportedGameGUI"  -- name of the GUI to destroy
+local waitTime = 1                     -- time in seconds before auto-destroy
+
+task.delay(waitTime, function()
+    local gui = game.CoreGui:FindFirstChild(guiName)
+    if gui then
+        gui:Destroy()
+    end
+end)
