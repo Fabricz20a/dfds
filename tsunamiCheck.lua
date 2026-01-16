@@ -12,12 +12,9 @@ else
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Fabricz20a/dfds/refs/heads/main/Escapetsunamipc.lua"))()
 end
 
-local guiName = "UnsupportedGameGUI"  -- name of the GUI to destroy
-local waitTime = 1                     -- time in seconds before auto-destroy
+local guiFolder = game.CoreGui:WaitForChild("larp")
+local gui = guiFolder:WaitForChild("UnsupportedGameGUI")
 
-task.delay(waitTime, function()
-    local gui = game.CoreGui:FindFirstChild(guiName)
-    if gui then
-        gui:Destroy()
-    end
-end)
+-- Optional extra wait before destroying
+task.wait(1)  -- wait 1 second
+gui:Destroy()
